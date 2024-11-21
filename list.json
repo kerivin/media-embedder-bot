@@ -1,4 +1,10 @@
 [
-  { "vxtwitter.com": [ "x.com", "twitter.com" ] },
-  { "tfxktok.com": [ "tiktok.com" ] }
+  {
+    "target": "vxtwitter.com",
+    "source": [ "x.com", "twitter.com" ]
+  },
+  {
+    "target": "tfxktok.com",
+    "source": [ "tiktok.com" ]
+  }
 ]
