@@ -8,19 +8,16 @@ I'm not the author of embed links themselves, the bot just uses the ones I've fo
 
 Usage: write `@bot_username <post link>` in any chat
 
----
-
 ## Credits
 
 Telegram Bot on Cloudflare Workers: https://github.com/cvzi/telegram-bot-cloudflare
 
-TikTok: https://tfxktok.com/
+[TikTok Embed](https://tfxktok.com/)
 
-Reddit: https://github.com/dylanpdx/vxReddit
+[Reddit Embed](https://github.com/dylanpdx/vxReddit)
 
-Twitter, Bluesky: https://github.com/FixTweet/FxTwitter
+[Twitter, Bluesky Embed](https://github.com/FixTweet/FxTwitter)
 
----
 
 ## Installation
 
@@ -33,7 +30,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 1. Set secrets and variables in worker settings:
    `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
    `ENV_BOT_TOKEN` - secret, you'll get this after creating a bot with [BotFather](https://t.me/BotFather)
-   `ENV_LIST_URL` - text, use this value: ${{ vars.ENV_LIST_URL }}
+   `ENV_LIST_URL` - text, use this value: `https://raw.githubusercontent.com/kerivin/media-embedder-bot/refs/heads/main/list.json`
 1. Press `Edit Code` on your worker page, Copy the content of `worker.js` and press `Deploy`
 1. Enter this in address bar in your browser: `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=media-embedder-bot.<USERNAME>.workers.dev`, where `<BOT_TOKEN>` is the one you got from BotFather, and  `<USERNAME>` is your Cloudflare username. You can see the worker subdomain on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
@@ -48,7 +45,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
    `CLOUDFLARE_API_TOKEN` - secret, create `Edit Workers` [here](https://dash.cloudflare.com/profile/api-tokens)
    `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
    `ENV_BOT_TOKEN` - secret, you'll get this after creating a bot with [BotFather](https://t.me/BotFather)
-1. Adjust `wrangler.toml` for your needs (for example, link to your own replacement JSON map). See [here](https://developers.cloudflare.com/workers/wrangler/configuration/)
+1. Adjust `wrangler.toml` for your needs (for example, link to your own JSON replacement map in `ENV_LIST_URL`). See [here](https://developers.cloudflare.com/workers/wrangler/configuration/)
 1. Deploy (happens automatically after push in master branch)
 1. Enter this line in your browser address bar and press enter: `[<worker address>](https://media-embedder-bot.<USERNAME>.workers.dev/)/registerWebhook`, where `<USERNAME>` is your Cloudflare username. You can see the worker subdomain on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
