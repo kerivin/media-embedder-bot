@@ -2,9 +2,9 @@
  * https://github.com/cvzi/telegram-bot-cloudflare
  */
 
-const TOKEN = ${{ secrets.ENV_BOT_TOKEN }} // Get it from @BotFather https://core.telegram.org/bots#6-botfather
-const SECRET = ${{ secrets.ENV_BOT_SECRET }} // A-Z, a-z, 0-9, _ and -
-const LIST_URL = ${{ vars.ENV_LIST_URL }}
+const TOKEN = secrets.ENV_BOT_TOKEN // Get it from @BotFather https://core.telegram.org/bots#6-botfather
+const SECRET = secrets.ENV_BOT_SECRET // A-Z, a-z, 0-9, _ and -
+const LIST_URL = vars.ENV_LIST_URL
 const WEBHOOK = '/endpoint'
 
 /**
