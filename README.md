@@ -10,7 +10,7 @@ Usage: write `@bot_username <post link>` in any chat
 
 ## Credits
 
-Telegram Bot on Cloudflare Workers: https://github.com/cvzi/telegram-bot-cloudflare
+[Telegram Bot on Cloudflare Workers](https://github.com/cvzi/telegram-bot-cloudflare)
 
 [TikTok Embed](https://tfxktok.com/)
 
