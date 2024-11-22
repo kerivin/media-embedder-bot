@@ -6,7 +6,7 @@
   },
   {
     "name": "TikTok",
-    "target": "vm.vxtiktok.com",
+    "target": "tfxktok.com",
     "source": ".*tiktok\\.com"
   },
   {
