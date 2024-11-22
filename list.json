@@ -1,13 +1,16 @@
 [
   {
+    "name": "Twitter",
     "target": "fxtwitter.com",
     "source": "^(www.)?((x\\.com)|(twitter\\.com))"
   },
   {
+    "name": "TikTok",
     "target": "tfxktok.com",
     "source": ".*tiktok\\.com"
   },
   {
+    "name": "Reddit",
     "target": "vxreddit.com",
     "source": "^(www.)?reddit\\.com"
   }
