@@ -101,8 +101,8 @@ async function onInlineQuery (inlineQuery) {
           return true
         }
         console.log("Regex detected: ", entry.source)
-        //url.hostname.replace(regex, entry.target)
-        url.hostname = entry.target
+        url.hostname = url.hostname.replace(regex, entry.target)
+        //url.hostname = entry.target
         console.log("New hostname: ", url.hostname)
         title = entry.name
         return false
