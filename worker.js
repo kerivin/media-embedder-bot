@@ -110,7 +110,7 @@ async function onInlineQuery (inlineQuery) {
 
       console.log("Fixed URL: ", url)
       const fixedURL = url.toString()
-      const markdownURL = `[title](${fixedURL})`
+      const markdownURL = `[link](${fixedURL})`
 
       results.push({
         type: 'article',
