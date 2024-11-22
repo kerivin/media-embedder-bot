@@ -1,4 +1,4 @@
-[Media Embedder Bot](https://t.me/medemb_bot) for Telegram
+[Media Embedder Bot](https://t.me/embedobot) for Telegram
 
 Usage: write `@embedobot <link>` in any chat
 
