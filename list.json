@@ -1,27 +1,27 @@
 [
   {
     "name": "Twitter",
-    "target": [ "fxtwitter.com", "fixupx.com", "vxtwitter.com" ],
+    "target": "fxtwitter.com",
     "source": "^(www.)?((x\\.com)|(twitter\\.com))"
   },
   {
     "name": "TikTok",
-    "target": [ "tfxktok.com", "vm.vxtiktok.com", "vxtiktok.com" ],
+    "target": "tfxktok.com",
     "source": ".*tiktok\\.com"
   },
   {
     "name": "Reddit",
-    "target": [ "vxreddit.com", "rxddit.com", "fxreddit.com" ],
+    "target": "vxreddit.com",
     "source": "^(www.)?reddit\\.com"
   },
   {
     "name": "Bluesky",
-    "target": [ "fxbsky.app" ],
+    "target": "fxbsky.app",
     "source": "^(www.)?bsky\\.app"
   },
   {
     "name": "Instagram",
-    "target": [ "ddinstagram.com" ],
+    "target": "ddinstagram.com",
     "source": "^(www.)?instagram\\.com"
   }
 ]
