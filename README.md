@@ -46,7 +46,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
    - `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
    - `ENV_BOT_TOKEN` - secret, you've got this after creating a bot with [BotFather](https://t.me/BotFather)
 1. Adjust `wrangler.toml` according to your needs (for example, link to your own JSON replacement map in `ENV_LIST_URL`). See [here](https://developers.cloudflare.com/workers/wrangler/configuration/)
-1. Deploy (happens automatically upon push in `main` branch)
+1. Deploy (happens automatically on push in `main` branch)
 1. Enter this line in your browser address bar and press enter: `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`, where `<USERNAME>` is your Cloudflare username. The default subdomain is `<USERNAME>.workers.dev`, but you can see the actual one on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
    
