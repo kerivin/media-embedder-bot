@@ -8,4 +8,4 @@ TikTok: https://tfxktok.com/
 
 Reddit: https://github.com/dylanpdx/vxReddit
 
-Twitter: https://github.com/FixTweet/FxTwitter
+Twitter, Bluesky: https://github.com/FixTweet/FxTwitter
