@@ -13,5 +13,10 @@
     "name": "Reddit",
     "target": "vxreddit.com",
     "source": "^(www.)?reddit\\.com"
+  },
+  {
+    "name": "Bluesky",
+    "target": "fxbsky.app",
+    "source": "^(www.)?bsky\\.app"
   }
 ]
