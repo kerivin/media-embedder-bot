@@ -21,7 +21,7 @@ Usage: write `@bot_username <post link>` in any chat, **you don't need to add th
 
 Embed projects:
 
-- [TikTok](https://tfxktok.com/)
+- [TikTok](https://github.com/dylanpdx/vxtiktok)
 - [Reddit](https://github.com/dylanpdx/vxReddit)
 - [Twitter](https://fxtwitter.com/)
 - [Bluesky](https://fxtwitter.com/)
