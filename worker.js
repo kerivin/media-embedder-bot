@@ -112,6 +112,8 @@ async function onInlineQuery (inlineQuery) {
       const fixedURL = url.toString()
       const markdownURL = `[${fixedURL}](${fixedURL})`
 
+      title = "Test"
+
       results.push({
         type: 'article',
         id: crypto.randomUUID(),
