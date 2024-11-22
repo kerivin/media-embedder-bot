@@ -90,26 +90,32 @@ async function onInlineQuery (inlineQuery) {
       const json = await response.json();
       console.log("JSON: ", JSON.stringify(json));
 
-      const url = new URL(inlineQuery.query)
+      var url = new URL(inlineQuery.query)
       console.log("Hostname: ", url.hostname)
 
       var title = "Embed Link"
 
       json.every(function(entry) {
         const regex = new RegExp(entry.source, "gi")
-        if (regex.test(url.hostname)) {
-          console.log("Regex detected: ", entry.source)
-          const validTarget = entry.target.find(urlExists)
-          console.log("Valid target URL: ", validTarget)
-          if (validTarget !== undefined) {
-            //url.hostname.replace(regex, validTarget)
-            url.hostname = validTarget
-            console.log("New hostname: ", url.hostname)
-            title = entry.name
-            return false            
-          }
+        if (!regex.test(url.hostname)) {
+          return true
         }
-        return true
+        console.log("Regex detected: ", entry.source)
+        
+        const keepSearching = entry.target.every(function(target) {
+          const checkURL = new URL(url.toString())
+          checkURL.hostname = target
+          if (!urlExists(checkURL.toString())) {
+            return true
+          }
+          
+          url = checkURL
+          title = entry.name
+          console.log("Valid target URL: ", validTarget)
+          return false
+        })
+
+        return keepSearching
       })
 
       console.log("Fixed URL: ", url)
