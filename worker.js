@@ -4,8 +4,8 @@
 
 const TOKEN = ENV_BOT_TOKEN // Get it from @BotFather https://core.telegram.org/bots#6-botfather
 const SECRET = ENV_BOT_SECRET // A-Z, a-z, 0-9, _ and -
-const WEBHOOK = '/endpoint'
 const LIST_URL = ENV_LIST_URL
+const WEBHOOK = '/endpoint'
 
 /**
  * Wait for requests to the worker
