@@ -1,3 +1,5 @@
 name = "cf-worker"
+main = "worker.js"
+compatibility_date = "2024-11-22"
 type = "javascript"
 workers_dev = true
