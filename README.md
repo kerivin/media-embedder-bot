@@ -23,8 +23,9 @@ Usage: write `@bot_username <post link>` in any chat, **you don't need to add th
 
 [Reddit Embed](https://github.com/dylanpdx/vxReddit)
 
-[Twitter, Bluesky Embed](https://github.com/FixTweet/FxTwitter)
+[Twitter, Bluesky Embed](https://fxtwitter.com/)
 
+[Instagram Embed](https://www.ddinstagram.com/)
 
 ## Installation
 
