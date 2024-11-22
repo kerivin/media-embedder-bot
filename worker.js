@@ -181,18 +181,3 @@ function apiUrl (methodName, params = null) {
   }
   return `https://api.telegram.org/bot${TOKEN}/${methodName}${query}`
 }
-
-/*
-* https://stackoverflow.com/a/65672697
-*/
-async function urlExists(url) {
-  return new Promise((resolve, reject) => {
-    fetch(url, {
-      method: "HEAD"
-    }).then(response => {
-      resolve(response.status.toString()[0] === "2")
-    }).catch(error => {
-      reject(false)
-    })
-  })
-}
