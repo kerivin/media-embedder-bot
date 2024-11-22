@@ -1,7 +1,7 @@
 [
   {
     "target": "vxtwitter.com",
-    "source": "(^x\\.com)|(\btwitter\\.com\b)"
+    "source": "^(www.)?((x\\.com)|(twitter\\.com))"
   },
   {
     "target": "tfxktok.com",
@@ -9,6 +9,6 @@
   },
   {
     "target": "vxreddit.com",
-    "source": "\breddit\\.com\b"
+    "source": "^(www.)?reddit\\.com"
   }
 ]
