@@ -32,7 +32,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
    - `ENV_BOT_TOKEN` - secret, you've got this after creating a bot with [BotFather](https://t.me/BotFather)
    - `ENV_LIST_URL` - text, use this value: `https://raw.githubusercontent.com/kerivin/media-embedder-bot/refs/heads/main/list.json`
 1. Press `Edit Code` on your worker page, Copy the content of `worker.js` and press `Deploy`
-1. Enter this in address bar in your browser: `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=media-embedder-bot.<USERNAME>.workers.dev`, where `<BOT_TOKEN>` is the one you got from BotFather, and  `<USERNAME>` is your Cloudflare username. You can see the worker subdomain on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
+1. Enter this in address bar in your browser: `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=media-embedder-bot.<USERNAME>.workers.dev`, where `<BOT_TOKEN>` is the one you got from BotFather, and  `<USERNAME>` is your Cloudflare username. The default subdomain is `<USERNAME>.workers.dev`, but you can see the worker subdomain on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
 
 ### Github deployment way
@@ -47,6 +47,6 @@ You don't need to install anything on your PC, and you can run this bot entirely
    - `ENV_BOT_TOKEN` - secret, you've got this after creating a bot with [BotFather](https://t.me/BotFather)
 1. Adjust `wrangler.toml` according to your needs (for example, link to your own JSON replacement map in `ENV_LIST_URL`). See [here](https://developers.cloudflare.com/workers/wrangler/configuration/)
 1. Deploy (happens automatically after push in master branch)
-1. Enter this line in your browser address bar and press enter: `[<worker address>](https://media-embedder-bot.<USERNAME>.workers.dev/)/registerWebhook`, where `<USERNAME>` is your Cloudflare username. You can see the worker subdomain on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
+1. Enter this line in your browser address bar and press enter: `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`, where `<USERNAME>` is your Cloudflare username. The default subdomain is `<USERNAME>.workers.dev`, but you can see the worker subdomain on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
    
