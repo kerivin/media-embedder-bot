@@ -2,3 +2,6 @@ name = "media-embedder-bot"
 main = "worker.js"
 compatibility_date = "2024-11-22"
 workers_dev = true
+
+[vars]
+ENV_LIST_URL = "https://raw.githubusercontent.com/kerivin/media-embedder-bot/refs/heads/main/list.json"
