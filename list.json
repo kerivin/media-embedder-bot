@@ -5,6 +5,6 @@
   },
   {
     "target": "tfxktok.com",
-    "sources": [ "tiktok.com" ]
+    "sources": [ "*tiktok.com" ]
   }
 ]
