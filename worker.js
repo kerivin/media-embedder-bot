@@ -101,21 +101,11 @@ async function onInlineQuery (inlineQuery) {
           return true
         }
         console.log("Regex detected: ", entry.source)
-        
-        const keepSearching = entry.target.every(function(target) {
-          const checkURL = new URL(url.toString())
-          checkURL.hostname = target
-          if (!urlExists(checkURL.toString())) {
-            return true
-          }
-          
-          url = checkURL
-          title = entry.name
-          console.log("Valid target URL: ", validTarget)
-          return false
-        })
-
-        return keepSearching
+        //url.hostname.replace(regex, entry.target)
+        url.hostname = entry.target
+        console.log("New hostname: ", url.hostname)
+        title = entry.name
+        return false
       })
 
       console.log("Fixed URL: ", url)
