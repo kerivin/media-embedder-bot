@@ -19,13 +19,13 @@ Usage: write `@bot_username <post link>` in any chat, **you don't need to add th
 
 [Telegram Bot on Cloudflare Workers](https://github.com/cvzi/telegram-bot-cloudflare)
 
-[TikTok Embed](https://tfxktok.com/)
+Embed projects:
 
-[Reddit Embed](https://github.com/dylanpdx/vxReddit)
-
-[Twitter, Bluesky Embed](https://fxtwitter.com/)
-
-[Instagram Embed](https://www.ddinstagram.com/)
+- [TikTok](https://tfxktok.com/)
+- [Reddit](https://github.com/dylanpdx/vxReddit)
+- [Twitter](https://fxtwitter.com/)
+- [Bluesky](https://fxtwitter.com/)
+- [Instagram](https://www.ddinstagram.com/)
 
 ## Installation
 
