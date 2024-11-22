@@ -6,7 +6,7 @@ It replaces regular post links (https://twitter.com/..., https://vt.tiktok.com/.
 
 I'm not the author of embed links themselves, the bot just uses the ones I've found. Embedding is limited to original projects'.
 
-Usage: write `@bot_username <post link>` in any chat
+Usage: write `@bot_username <post link>` in any chat, **you don't need to add the bot to a group chat**
 
 ## Credits
 
@@ -25,7 +25,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 
 ### Fast way
 
-1. Register a new bot with [BotFather](https://t.me/BotFather)
+1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode with `/setinline`
 1. Create a worker in [Cloudflare](https://dash.cloudflare.com/sign-up/workers-and-pages)
 1. Set secrets and variables in worker settings:
    - `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
@@ -37,7 +37,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 
 ### Github deployment way
 
-1. Register a new bot with [BotFather](https://t.me/BotFather)
+1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode with `/setinline`
 1. Fork this repo
 1. Create Cloudflare Worker "media-embedder-bot" [(free plan doesn't require a card)](https://dash.cloudflare.com/sign-up/workers-and-pages)
 1. Set up secrets and variables in Github project settings:
