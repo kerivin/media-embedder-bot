@@ -6,8 +6,8 @@
   },
   {
     "name": "TikTok",
-    "target": "vm.vxtiktok.com",
-    "source": ".*tiktok\\.com"
+    "target": "vxtiktok.com",
+    "source": "tiktok\\.com"
   },
   {
     "name": "Reddit",
