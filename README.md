@@ -8,6 +8,13 @@ I'm not the author of embed links themselves, the bot just uses the ones I've fo
 
 Usage: write `@bot_username <post link>` in any chat, **you don't need to add the bot to a group chat**
 
+> Example:
+> 
+> `@mybot https://vt.tiktok.com/ZSjHrkbTo/` will show a popup with a new link `https://tfxktok.com/ZSjHrkbTo/`
+>
+> Press the new link, and you'll send the video
+
+
 ## Credits
 
 [Telegram Bot on Cloudflare Workers](https://github.com/cvzi/telegram-bot-cloudflare)
