@@ -5,3 +5,6 @@ workers_dev = true
 
 [vars]
 ENV_LIST_URL = "https://raw.githubusercontent.com/kerivin/media-embedder-bot/refs/heads/main/list.json"
+
+[observability.logs]
+enabled = true
