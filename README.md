@@ -39,7 +39,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 
 1. Register a new bot with [BotFather](https://t.me/BotFather)
 1. Fork this repo
-1. Create Cloudflare Worker "media-embedder-bot" ([free plan doesn't require a card](https://dash.cloudflare.com/sign-up/workers-and-pages)
+1. Create Cloudflare Worker "media-embedder-bot" [(free plan doesn't require a card)](https://dash.cloudflare.com/sign-up/workers-and-pages)
 1. Set up secrets and variables in Github project settings:
    - `CLOUDFLARE_ACCOUNT_ID` - secret, found on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
    - `CLOUDFLARE_API_TOKEN` - secret, create `Edit Workers` [here](https://dash.cloudflare.com/profile/api-tokens)
