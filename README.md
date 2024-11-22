@@ -1,4 +1,4 @@
-![Picture](./chain1.png)
+<img src="./chain1.png" width="64" height="64">
 
 # Embed Media Telegram Bot
 
