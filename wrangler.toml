@@ -4,4 +4,4 @@ compatibility_date = "2024-11-22"
 workers_dev = true
 
 [vars]
-ENV_LIST_URL = ${{ vars.ENV_LIST_URL }}
+ENV_LIST_URL = vars.ENV_LIST_URL
