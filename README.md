@@ -1,12 +1,12 @@
 # Embed Media Telegram Bot
 
-[Media Embedder Bot](https://t.me/embedobot) for Telegram
+Media Embedder Bot for Telegram
 
-Usage: write `@embedobot <link>` in any chat
+Usage: write `@bot_username link` in any chat
 
 ---
 
-Telegram Bot: https://github.com/cvzi/telegram-bot-cloudflare
+Telegram Bot on Cloudflare Workers: https://github.com/cvzi/telegram-bot-cloudflare
 
 TikTok: https://tfxktok.com/
 
