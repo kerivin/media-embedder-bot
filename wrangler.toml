@@ -1,4 +1,4 @@
-name = "cf-worker"
+name = "media-embedder-bot"
 main = "worker.js"
 compatibility_date = "2024-11-22"
 workers_dev = true
