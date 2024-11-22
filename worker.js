@@ -99,11 +99,15 @@ async function onInlineQuery (inlineQuery) {
         const regex = new RegExp(entry.source, "gi")
         if (regex.test(url.hostname)) {
           console.log("Regex detected: ", entry.source)
-          //url.hostname.replace(regex, entry.target)
-          url.hostname = entry.target
-          console.log("New hostname: ", url.hostname)
-          title = entry.name
-          return false
+          const validTarget = entry.target.find(urlExists)
+          console.log("Valid target URL: ", validTarget)
+          if (validTarget !== undefined) {
+            //url.hostname.replace(regex, validTarget)
+            url.hostname = validTarget
+            console.log("New hostname: ", url.hostname)
+            title = entry.name
+            return false            
+          }
         }
         return true
       })
