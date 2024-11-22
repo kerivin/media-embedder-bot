@@ -6,5 +6,9 @@
   {
     "target": "tfxktok.com",
     "source": ".*tiktok\\.com"
+  },
+  {
+    "target": "vxreddit.com",
+    "source": "\breddit\\.com\b"
   }
 ]
