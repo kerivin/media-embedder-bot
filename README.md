@@ -33,7 +33,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 1. Set secrets and variables in worker settings:
    `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
    `ENV_BOT_TOKEN` - secret, you'll get this after creating a bot with [BotFather](https://t.me/BotFather)
-   `ENV_LIST_URL` - text, use this value: `${{ vars.ENV_LIST_URL }}`
+   `ENV_LIST_URL` - text, use this value: ${{ vars.ENV_LIST_URL }}
 1. Press `Edit Code` on your worker page, Copy the content of `worker.js` and press `Deploy`
 1. Enter this in address bar in your browser: `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=media-embedder-bot.<USERNAME>.workers.dev`, where `<BOT_TOKEN>` is the one you got from BotFather, and  `<USERNAME>` is your Cloudflare username. You can see the worker subdomain on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
