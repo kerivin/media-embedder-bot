@@ -88,7 +88,7 @@ async function onInlineQuery (inlineQuery) {
       }
 
       const json = await response.json();
-      console.log("Json: ", JSON.stringify(json));
+      console.log("JSON: ", JSON.stringify(json));
 
       const url = new URL(inlineQuery.query)
       console.log("Hostname: ", url.hostname)
@@ -110,7 +110,7 @@ async function onInlineQuery (inlineQuery) {
 
       console.log("Fixed URL: ", url)
       const fixedURL = url.toString()
-      const markdownURL = `[link](${fixedURL})`
+      const markdownURL = `[embed link](${fixedURL})`
 
       results.push({
         type: 'article',
