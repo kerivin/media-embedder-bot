@@ -18,6 +18,9 @@ jobs:
           secrets: |
             ENV_BOT_SECRET
             ENV_BOT_TOKEN
+          vars: |
+            ENV_LIST_URL
         env:
           ENV_BOT_SECRET: ${{ secrets.ENV_BOT_SECRET }}
           ENV_BOT_TOKEN: ${{ secrets.ENV_BOT_TOKEN }}
+          ENV_LIST_URL: ${{ vars.ENV_LIST_URL }}
