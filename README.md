@@ -1,3 +1,5 @@
+![Picture](./chain1.png)
+
 # Embed Media Telegram Bot
 
 Media Embedder Bot for Telegram
