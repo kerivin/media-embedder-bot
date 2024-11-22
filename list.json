@@ -1,6 +1,6 @@
 [
   {
-    "target": "vxtwitter.com",
+    "target": "fxtwitter.com",
     "source": "^(www.)?((x\\.com)|(twitter\\.com))"
   },
   {
