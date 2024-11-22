@@ -2,7 +2,7 @@
 
 Media Embedder Bot for Telegram
 
-Usage: write `@bot_username link` in any chat
+Usage: write `@bot_username <post link>` in any chat
 
 ---
 
