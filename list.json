@@ -18,5 +18,10 @@
     "name": "Bluesky",
     "target": "fxbsky.app",
     "source": "^(www.)?bsky\\.app"
+  },
+  {
+    "name": "Instagram",
+    "target": "ddinstagram.com"
+    "source": "^(www.)?instagram\\.com"
   }
 ]
