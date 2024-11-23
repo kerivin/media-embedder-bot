@@ -49,7 +49,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 1. Enter this line in your browser address bar and press enter: `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`, where `<USERNAME>` is your Cloudflare username. The default subdomain is `<USERNAME>.workers.dev`, but you can see the actual one on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
 
-## Credits
+## Links
 
 [Telegram Bot on Cloudflare Workers](https://github.com/cvzi/telegram-bot-cloudflare)
 
