@@ -4,15 +4,6 @@ The bot replaces regular post links with ones that display embed media, so you c
 
 I'm not the author of embed link services themselves, the bot just uses the ones I've found.
 
-## Usage
-
-`@bot_username <post link>`
-
-Write this in any chat, **you don't need to add the bot to any chat or start chat with it**
-
-## Credits
-
-[Telegram Bot on Cloudflare Workers](https://github.com/cvzi/telegram-bot-cloudflare)
 
 Supported embeds:
 
@@ -22,6 +13,12 @@ Supported embeds:
 - [Bluesky](https://fxtwitter.com/)
 - [Instagram](https://www.ddinstagram.com/)
 - [YouTube](https://github.com/birabittoh/fixyoutube-go)
+
+## Usage
+
+`@bot_username <post link>`
+
+Write this in any chat, **you don't need to add the bot to any chat or start chat with it**
 
 ## Installation
 
@@ -52,4 +49,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 1. Deploy (trigger Github Actions, for example by push in `main` branch)
 1. Enter this line in your browser address bar and press enter: `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`, where `<USERNAME>` is your Cloudflare username. The default subdomain is `<USERNAME>.workers.dev`, but you can see the actual one on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
 1. If it says Ok, your bot is ready!
-   
+
+## Credits
+
+[Telegram Bot on Cloudflare Workers](https://github.com/cvzi/telegram-bot-cloudflare)
