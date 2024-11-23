@@ -26,7 +26,7 @@
   },
   {
     "name": "YouTube",
-    "target": "y.outube.duckdns.org",
+    "target": "koutu.be",
     "source": "^(www.)?((youtube\\.com)|(youtu\\.be))"
   }
 ]
