@@ -58,7 +58,13 @@ async function onUpdate (update) {
  * https://core.telegram.org/bots/api#message
  */
 function onMessage (message) {
-  return sendPlainText(message.chat.id, getFixedURL(message))
+  try {
+    const fixedURL = getFixedURL(message)
+    return sendPlainText(message.chat.id, fixedURL)
+  }
+  catch {
+    return sendPlainText(message.chat.id, 'Oops, can\'t handle that URL')
+  }
 }
 
 /**
@@ -77,66 +83,63 @@ async function sendPlainText (chatId, text) {
  * https://core.telegram.org/bots/api#InlineQuery
  */
 async function onInlineQuery (inlineQuery) {
-  const results = []
-  try { 
-    const originalURL = inlineQuery.query;
-    const fixedURL = getFixedURL(originalURL)
-
-    results.push({
-      type: 'article',
-      id: crypto.randomUUID(),
-      title: title,
-      url: fixedURL,
-      hide_url: true,
-      //thumbnail_url: originalURL,
-      description: fixedURL,
-      input_message_content: {
-        message_text: `[${title}](${fixedURL})`,
-        parse_mode: "markdown",
-        link_preview_options: {
-          is_disabled: false,
-          url: fixedURL
-        }
+  const originalURL = inlineQuery.query;
+  const fixedURL = getFixedURL(originalURL)
+  const results = [({
+    type: 'article',
+    id: crypto.randomUUID(),
+    title: title,
+    url: fixedURL,
+    hide_url: true,
+    //thumbnail_url: originalURL,
+    description: fixedURL,
+    input_message_content: {
+      message_text: `[${title}](${fixedURL})`,
+      parse_mode: "markdown",
+      link_preview_options: {
+        is_disabled: false,
+        url: fixedURL
       }
-    })
-  }
-  catch (error) {
-    console.log(error)
-  }
-  finally {
-    const res = JSON.stringify(results)
-    return SendInlineQuery(inlineQuery.id, res)
-  }
+    }
+  })]
+  const res = JSON.stringify(results)
+  return SendInlineQuery(inlineQuery.id, res)
 }
 
-async function getFixedURL(originalURL) {
-  console.log("Original URL: ", originalURL)
-  var url = new URL(originalURL)
-  console.log("Hostname: ", url.hostname)
-
-  console.log("List URL: ", LIST_URL)
-  const response = await fetch(LIST_URL);
-  if (!response.ok) {
-    throw new Error(`Fetch: ${response.status}`);
-  }
-  const json = await response.json();
-  console.log("JSON: ", JSON.stringify(json));
-  var title = "Embed Link"
-  json.every(function(entry) {
-    const regex = new RegExp(entry.source, "gi")
-    if (!regex.test(url.hostname)) {
-      return true
+async function getFixedURL (originalURL) {
+  try {
+    console.log("Original URL: ", originalURL)
+    var url = new URL(originalURL)
+    console.log("Hostname: ", url.hostname)
+  
+    console.log("List URL: ", LIST_URL)
+    const response = await fetch(LIST_URL);
+    if (!response.ok) {
+      throw new Error(`Fetch: ${response.status}`);
     }
-    console.log("Regex detected: ", entry.source)
-    url.hostname = url.hostname.replace(regex, entry.target)
-    //url.hostname = entry.target
-    console.log("New hostname: ", url.hostname)
-    title = entry.name
-    return false
-  })
-
-  console.log("Fixed URL: ", url)
-  return url.toString()
+    const json = await response.json();
+    console.log("JSON: ", JSON.stringify(json));
+    var title = "Embed Link"
+    json.every(function(entry) {
+      const regex = new RegExp(entry.source, "gi")
+      if (!regex.test(url.hostname)) {
+        return true
+      }
+      console.log("Regex detected: ", entry.source)
+      url.hostname = url.hostname.replace(regex, entry.target)
+      //url.hostname = entry.target
+      console.log("New hostname: ", url.hostname)
+      title = entry.name
+      return false
+    })
+  
+    console.log("Fixed URL: ", url)
+    return url.toString()
+  }
+  catch(error) {
+    console.log(error)
+    return originalURL
+  }
 }
 
 /**
