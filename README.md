@@ -6,7 +6,7 @@ The bot replaces regular post links with ones that display embed media, so you c
 
 - [TikTok](https://github.com/dylanpdx/vxtiktok)
 - [Reddit](https://github.com/dylanpdx/vxReddit)
-- [Twitter](https://fxtwitter.com/)
+- [X/Twitter](https://fxtwitter.com/)
 - [Bluesky](https://fxtwitter.com/)
 - [Instagram](https://www.ddinstagram.com/)
 - [YouTube](https://github.com/birabittoh/fixyoutube-go)
