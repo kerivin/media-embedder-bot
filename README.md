@@ -1,6 +1,4 @@
-# Embed Media Telegram Bot
-
-Media Embedder Bot for Telegram
+# Media Embedder Bot for Telegram
 
 The bot replaces regular post links (`https://twitter.com/...`, `https://vt.tiktok.com/...`, etc) with links that display embed media, so you can watch all the TikTok/Reddit/Twitter/Bluesky posts your friends send you at 5AM in Telegram, without ever launching apps or a browser.
 
