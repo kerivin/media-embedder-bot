@@ -2,7 +2,7 @@
 
 The bot replaces regular post links with ones that display embed media, so you can watch all the TikTok/Reddit/Twitter/Bluesky posts your friends send you at 5AM in Telegram, without ever launching apps or a browser.
 
-Supported embeds:
+## Supported embeds
 
 - [TikTok](https://github.com/dylanpdx/vxtiktok)
 - [Reddit](https://github.com/dylanpdx/vxReddit)
