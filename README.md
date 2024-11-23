@@ -2,9 +2,13 @@
 
 The bot replaces regular post links with ones that display embed media, so you can watch all the TikTok/Reddit/Twitter/Bluesky posts your friends send you at 5AM in Telegram, without ever launching apps or a browser.
 
-I'm not the author of embed links themselves, the bot just uses the ones I've found. Embedding is limited to original projects'.
+I'm not the author of embed link services themselves, the bot just uses the ones I've found.
 
-Usage: write `@bot_username <post link>` in any chat, **you don't need to add the bot to a group chat**
+### Usage
+
+`@bot_username <post link>`
+
+Write this in any chat, **you don't need to add the bot to a group chat**
 
 ## Credits
 
