@@ -57,7 +57,7 @@ async function onUpdate (update) {
  * Handle incoming Message
  * https://core.telegram.org/bots/api#message
  */
-function onMessage (message) {
+async function onMessage (message) {
   try {
     const {fixedURL, title} = await getFixedURL(message)
     return sendPlainText(message.chat.id, fixedURL)
