@@ -117,7 +117,7 @@ async function onInlineQuery (inlineQuery) {
         type: 'article',
         id: crypto.randomUUID(),
         title: title,
-        url: originalURL,
+        url: fixedURL,
         hide_url: true,
         //thumbnail_url: originalURL,
         description: fixedURL,
@@ -126,7 +126,7 @@ async function onInlineQuery (inlineQuery) {
           parse_mode: "markdown",
           link_preview_options: {
             is_disabled: false,
-            url: originalURL
+            url: fixedURL
           }
         }
       })
