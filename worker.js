@@ -81,6 +81,9 @@ async function onInlineQuery (inlineQuery) {
   try {
     console.log("Query: ", inlineQuery.query)
     if (inlineQuery.query.length > 0) {
+      var url = new URL(inlineQuery.query)
+      console.log("Hostname: ", url.hostname)
+
       console.log("List URL: ", LIST_URL)
       const response = await fetch(LIST_URL);
       if (!response.ok) {
@@ -89,9 +92,6 @@ async function onInlineQuery (inlineQuery) {
 
       const json = await response.json();
       console.log("JSON: ", JSON.stringify(json));
-
-      var url = new URL(inlineQuery.query)
-      console.log("Hostname: ", url.hostname)
 
       var title = "Embed Link"
 
@@ -117,7 +117,7 @@ async function onInlineQuery (inlineQuery) {
         id: crypto.randomUUID(),
         title: title,
         //url: fixedURL,
-        //thumbnail_url: fixedURL,
+        thumbnail_url: inlineQuery.query,
         description: fixedURL,
         input_message_content: {
           message_text: markdownURL,
