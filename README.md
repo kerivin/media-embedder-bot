@@ -4,7 +4,7 @@ The bot replaces regular post links with ones that display embed media, so you c
 
 I'm not the author of embed link services themselves, the bot just uses the ones I've found.
 
-### Usage
+## Usage
 
 `@bot_username <post link>`
 
