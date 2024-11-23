@@ -8,7 +8,7 @@ I'm not the author of embed link services themselves, the bot just uses the ones
 
 `@bot_username <post link>`
 
-Write this in any chat, **you don't need to add the bot to a group chat**
+Write this in any chat, **you don't need to add the bot to any chat or start chat with it**
 
 ## Credits
 
