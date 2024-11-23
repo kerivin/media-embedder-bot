@@ -58,8 +58,8 @@ async function onUpdate (update) {
  * https://core.telegram.org/bots/api#message
  */
 async function onMessage (message) {
-    const {fixedURL, title} = await getFixedURL(message)
-    return sendPlainText(message.chat.id, fixedURL)
+    const {url, title} = await getFixedURL(message)
+    return sendPlainText(message.chat.id, url)
 }
 
 /**
@@ -79,21 +79,21 @@ async function sendPlainText (chatId, text) {
  */
 async function onInlineQuery (inlineQuery) {
   const originalURL = inlineQuery.query;
-  const {fixedURL, title} = await getFixedURL(originalURL)
+  const {url, title} = await getFixedURL(originalURL)
   const results = [({
     type: 'article',
     id: crypto.randomUUID(),
     title: title,
-    url: fixedURL,
+    url: url,
     hide_url: true,
     //thumbnail_url: originalURL,
-    description: fixedURL,
+    description: url,
     input_message_content: {
-      message_text: `[${title}](${fixedURL})`,
+      message_text: `[${title}](${url})`,
       parse_mode: "markdown",
       link_preview_options: {
         is_disabled: false,
-        url: fixedURL
+        url: url
       }
     }
   })]
@@ -128,7 +128,7 @@ async function getFixedURL (originalURL) {
 
   console.log("Fixed URL: ", url)
   return {
-    text: url.toString(),
+    url: url.toString(),
     title: title
   }
 }
