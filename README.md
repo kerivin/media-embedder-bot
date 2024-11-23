@@ -21,6 +21,7 @@ Supported embeds:
 - [Twitter](https://fxtwitter.com/)
 - [Bluesky](https://fxtwitter.com/)
 - [Instagram](https://www.ddinstagram.com/)
+- [YouTube](https://github.com/birabittoh/fixyoutube-go)
 
 ## Installation
 
