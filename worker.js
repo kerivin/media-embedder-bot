@@ -58,13 +58,8 @@ async function onUpdate (update) {
  * https://core.telegram.org/bots/api#message
  */
 async function onMessage (message) {
-  try {
     const {fixedURL, title} = await getFixedURL(message)
     return sendPlainText(message.chat.id, fixedURL)
-  }
-  catch {
-    return sendPlainText(message.chat.id, "Oops, can't handle that URL")
-  }
 }
 
 /**
@@ -107,44 +102,34 @@ async function onInlineQuery (inlineQuery) {
 }
 
 async function getFixedURL (originalURL) {
-  try {
-    console.log("Original URL: ", originalURL)
-    var url = new URL(originalURL)
-    console.log("Hostname: ", url.hostname)
-  
-    console.log("List URL: ", LIST_URL)
-    const response = await fetch(LIST_URL);
-    if (!response.ok) {
-      throw new Error(`Fetch: ${response.status}`);
-    }
-    const json = await response.json();
-    console.log("JSON: ", JSON.stringify(json));
-    var title = "Embed Link"
-    json.every(function(entry) {
-      const regex = new RegExp(entry.source, "gi")
-      if (!regex.test(url.hostname)) {
-        return true
-      }
-      console.log("Regex detected: ", entry.source)
-      url.hostname = url.hostname.replace(regex, entry.target)
-      //url.hostname = entry.target
-      console.log("New hostname: ", url.hostname)
-      title = entry.name
-      return false
-    })
-  
-    console.log("Fixed URL: ", url)
-    return {
-      url: url.toString(),
-      title: title
-    }
+  console.log("Original URL: ", originalURL)
+  var url = new URL(originalURL)
+  console.log("Hostname: ", url.hostname)
+  console.log("List URL: ", LIST_URL)
+  const response = await fetch(LIST_URL);
+  if (!response.ok) {
+    throw new Error(`Fetch: ${response.status}`);
   }
-  catch(error) {
-    console.log(error)
-    return {
-      url: originalURL,
-      title: "Embed"
+  const json = await response.json();
+  console.log("JSON: ", JSON.stringify(json));
+  var title = "Embed Link"
+  json.every(function(entry) {
+    const regex = new RegExp(entry.source, "gi")
+    if (!regex.test(url.hostname)) {
+      return true
     }
+    console.log("Regex detected: ", entry.source)
+    url.hostname = url.hostname.replace(regex, entry.target)
+    //url.hostname = entry.target
+    console.log("New hostname: ", url.hostname)
+    title = entry.name
+    return false
+  })
+
+  console.log("Fixed URL: ", url)
+  return {
+    url: url.toString(),
+    title: title
   }
 }
 
