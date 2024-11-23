@@ -58,7 +58,7 @@ async function onUpdate (update) {
  * https://core.telegram.org/bots/api#message
  */
 async function onMessage (message) {
-    const {url, title} = await getFixedURL(message)
+    const {url, title} = await getFixedURL(message.text)
     return sendPlainText(message.chat.id, url)
 }
 
