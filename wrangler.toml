@@ -1,6 +1,6 @@
 name = "media-embedder-bot"
 main = "worker.js"
-compatibility_date = "2024-11-22"
+compatibility_date = "2024-11-23"
 workers_dev = true
 
 [vars]
