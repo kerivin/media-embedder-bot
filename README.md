@@ -53,4 +53,4 @@ You don't need to install anything on your PC, and you can run this bot entirely
 
 [Telegram Bot on Cloudflare Workers](https://github.com/cvzi/telegram-bot-cloudflare)
 
-[More embed serives](https://gist.github.com/meqativ/ea15d319f7889a02c893605c62f148c2)
+[More embed services](https://gist.github.com/meqativ/ea15d319f7889a02c893605c62f148c2)
