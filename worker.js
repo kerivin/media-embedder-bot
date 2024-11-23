@@ -117,7 +117,7 @@ async function onInlineQuery (inlineQuery) {
         id: crypto.randomUUID(),
         title: title,
         //url: fixedURL,
-        thumbnail_url: inlineQuery.query,
+        //thumbnail_url: inlineQuery.query,
         description: fixedURL,
         input_message_content: {
           message_text: markdownURL,
