@@ -79,9 +79,10 @@ async function sendPlainText (chatId, text) {
 async function onInlineQuery (inlineQuery) {
   const results = []
   try {
-    console.log("Query: ", inlineQuery.query)
-    if (inlineQuery.query.length > 0) {
-      var url = new URL(inlineQuery.query)
+    const originalURL = inlineQuery.query;
+    console.log("Original URL: ", originalURL)
+    if (originalURL.length > 0) {
+      var url = new URL(originalURL)
       console.log("Hostname: ", url.hostname)
 
       console.log("List URL: ", LIST_URL)
@@ -116,15 +117,16 @@ async function onInlineQuery (inlineQuery) {
         type: 'article',
         id: crypto.randomUUID(),
         title: title,
-        //url: fixedURL,
-        //thumbnail_url: inlineQuery.query,
+        url: originalURL,
+        hide_url: true,
+        //thumbnail_url: originalURL,
         description: fixedURL,
         input_message_content: {
           message_text: markdownURL,
           parse_mode: "markdown",
           link_preview_options: {
             is_disabled: false,
-            url: fixedURL
+            url: originalURL
           }
         }
       })
