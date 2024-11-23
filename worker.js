@@ -128,7 +128,7 @@ async function getFixedURL (originalURL) {
 
   console.log("Fixed URL: ", url)
   return {
-    url: url.toString(),
+    text: url.toString(),
     title: title
   }
 }
