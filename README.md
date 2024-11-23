@@ -9,7 +9,8 @@ The bot replaces regular post links with ones that display embed media, so you c
 - [X/Twitter](https://fxtwitter.com/)
 - [Bluesky](https://fxtwitter.com/)
 - [Instagram](https://www.ddinstagram.com/)
-- [YouTube](https://github.com/birabittoh/fixyoutube-go)
+- [YouTube](https://github.com/iGerman00/koutube)
+- [YouTube Shorts](https://github.com/iGerman00/koutube)
 
 I'm not the author of the embed services themselves, the bot just creates a link to them. If you run into a problem with embeds, you can report it to the original author.
 
