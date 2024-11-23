@@ -119,7 +119,7 @@ async function onInlineQuery (inlineQuery) {
         title: title,
         url: fixedURL,
         hide_url: true,
-        //thumbnail_url: originalURL,
+        thumbnail_url: fixedURL,
         description: fixedURL,
         input_message_content: {
           message_text: markdownURL,
