@@ -59,7 +59,7 @@ async function onUpdate (update) {
  */
 function onMessage (message) {
   try {
-    const {fixedURL, title} = getFixedURL(message)
+    const {fixedURL, title} = await getFixedURL(message)
     return sendPlainText(message.chat.id, fixedURL)
   }
   catch {
@@ -84,7 +84,7 @@ async function sendPlainText (chatId, text) {
  */
 async function onInlineQuery (inlineQuery) {
   const originalURL = inlineQuery.query;
-  const {fixedURL, title} = getFixedURL(originalURL)
+  const {fixedURL, title} = await getFixedURL(originalURL)
   const results = [({
     type: 'article',
     id: crypto.randomUUID(),
