@@ -59,11 +59,11 @@ async function onUpdate (update) {
  */
 function onMessage (message) {
   try {
-    const fixedURL = getFixedURL(message)
+    const {fixedURL, title} = getFixedURL(message)
     return sendPlainText(message.chat.id, fixedURL)
   }
   catch {
-    return sendPlainText(message.chat.id, 'Oops, can\'t handle that URL')
+    return sendPlainText(message.chat.id, "Oops, can't handle that URL")
   }
 }
 
@@ -84,7 +84,7 @@ async function sendPlainText (chatId, text) {
  */
 async function onInlineQuery (inlineQuery) {
   const originalURL = inlineQuery.query;
-  const fixedURL = getFixedURL(originalURL)
+  const {fixedURL, title} = getFixedURL(originalURL)
   const results = [({
     type: 'article',
     id: crypto.randomUUID(),
@@ -134,11 +134,17 @@ async function getFixedURL (originalURL) {
     })
   
     console.log("Fixed URL: ", url)
-    return url.toString()
+    return {
+      url: url.toString(),
+      title: title
+    }
   }
   catch(error) {
     console.log(error)
-    return originalURL
+    return {
+      url: originalURL,
+      title: "Embed"
+    }
   }
 }
 
