@@ -23,5 +23,10 @@
     "name": "Instagram",
     "target": "ddinstagram.com",
     "source": "^(www.)?instagram\\.com"
+  },
+  {
+    "name": "YouTube",
+    "target": "y.outube.duckdns.org",
+    "source": "^(www.)?((youtube\\.com)|(youtu\\.be))"
   }
 ]
