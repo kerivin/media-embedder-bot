@@ -2,6 +2,8 @@
 
 The bot replaces regular post links with ones that display embed media, so you can watch all the TikTok/Reddit/Twitter/Bluesky posts your friends send you at 5AM in Telegram without ever launching apps or a browser.
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/kerivin/media-embedder-bot)
+
 ## Supported embeds
 
 - [TikTok](https://github.com/dylanpdx/vxtiktok)
