@@ -24,11 +24,11 @@ Write this in any chat, **you don't need to add the bot to any chat or start cha
 
 You don't need to install anything on your PC, and you can run this bot entirely for free.
 
-Instead of configuring Workers manually, you can try this:
+### Fast way
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/kerivin/media-embedder-bot)
 
-### Fast way
+### Simple way
 
 1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode by `/setinline`
 1. Create [Cloudflare Worker](https://dash.cloudflare.com/sign-up/workers-and-pages) "media-embedder-bot" (free plan doesn't require a card)
