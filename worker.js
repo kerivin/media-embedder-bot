@@ -84,7 +84,7 @@ async function onInlineQuery (inlineQuery) {
     type: 'article',
     id: crypto.randomUUID(),
     title: title,
-    url: url,
+    //url: url,
     hide_url: true,
     //thumbnail_url: originalURL,
     description: url,
