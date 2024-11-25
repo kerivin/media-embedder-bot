@@ -28,6 +28,8 @@ You don't need to install anything on your PC, and you can run this bot entirely
 
 1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode by `/setinline`
 1. Create [Cloudflare Worker](https://dash.cloudflare.com/sign-up/workers-and-pages) "media-embedder-bot" (free plan doesn't require a card)
+   - You can try this instead of configuring Workers manually:
+   - [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/kerivin/media-embedder-bot)
 1. Set secrets and variables in worker settings:
    - `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
    - `ENV_BOT_TOKEN` - secret, you've got this after creating a bot with [BotFather](https://t.me/BotFather)
