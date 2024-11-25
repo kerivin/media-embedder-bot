@@ -28,6 +28,17 @@ You don't need to install anything on your PC, and you can run this bot entirely
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/kerivin/media-embedder-bot)
 
+1. Configure secrets in Github project settings:
+   - `CLOUDFLARE_ACCOUNT_ID` - secret, found on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
+   - `CLOUDFLARE_API_TOKEN` - secret, create `Edit Workers` [here](https://dash.cloudflare.com/profile/api-tokens)
+   - `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
+   - `ENV_BOT_TOKEN` - secret, you've got this after creating a bot with [BotFather](https://t.me/BotFather)
+1. Adjust `wrangler.toml` according to your needs (for example, link to your own JSON replacement map in `ENV_LIST_URL`). See [here](https://developers.cloudflare.com/workers/wrangler/configuration/)
+1. Paste the Worker address to a browser address bar, add `/registerWebhook` at the end and press Enter
+   - You can find the Worker address if you go to [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> media-embedder-bot -> Right click on "Visit" button -> Copy link
+   - By default, it should look something like `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`
+1. If it says Ok, your bot is ready!
+
 ### Fast way if you don't want to bother
 
 1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode by `/setinline`
@@ -46,7 +57,7 @@ You don't need to install anything on your PC, and you can run this bot entirely
 
 1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode by `/setinline`
 1. Create [Cloudflare Worker](https://dash.cloudflare.com/sign-up/workers-and-pages) "media-embedder-bot" (free plan doesn't require a card)
-1. Fork this repo and set up secrets in Github project settings:
+1. Fork this repo and add secrets in Github project settings:
    - `CLOUDFLARE_ACCOUNT_ID` - secret, found on [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> Overview
    - `CLOUDFLARE_API_TOKEN` - secret, create `Edit Workers` [here](https://dash.cloudflare.com/profile/api-tokens)
    - `ENV_BOT_SECRET` - secret for [setWebhook](https://core.telegram.org/bots/api#setwebhook), allowed symbols: A-Z, a-z, 0-9, _ and -
