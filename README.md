@@ -24,7 +24,9 @@ Write this in any chat, **you don't need to add the bot to any chat or start cha
 
 You don't need to install anything on your PC, and you can run this bot entirely for free.
 
-### Fast way if you have a Github account
+<details>
+  <summary><h3>Fast way if you have a Github account</h3></summary>
+
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/kerivin/media-embedder-bot)
 
@@ -39,7 +41,10 @@ You don't need to install anything on your PC, and you can run this bot entirely
    - By default, it should look something like `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`
 1. If it says Ok, your bot is ready!
 
-### Fast way if you don't want to bother
+</details>
+
+<details>
+  <summary><h3>Fast way if you don't want to bother</h3></summary>
 
 1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode by `/setinline`
 1. Create [Cloudflare Worker](https://dash.cloudflare.com/sign-up/workers-and-pages) "media-embedder-bot" (free plan doesn't require a card)
@@ -53,7 +58,10 @@ You don't need to install anything on your PC, and you can run this bot entirely
    - By default, it should look something like `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`
 1. If it says Ok, your bot is ready!
 
-### Manual Github way
+</details>
+
+<details>
+  <summary><h3>Manual Github way</h3></summary>
 
 1. Register a new bot with [BotFather](https://t.me/BotFather), set inline mode by `/setinline`
 1. Create [Cloudflare Worker](https://dash.cloudflare.com/sign-up/workers-and-pages) "media-embedder-bot" (free plan doesn't require a card)
@@ -68,6 +76,8 @@ You don't need to install anything on your PC, and you can run this bot entirely
    - You can find the Worker address if you go to [Cloudflare](https://dash.cloudflare.com/) -> Workers & Pages -> media-embedder-bot -> Right click on "Visit" button -> Copy link
    - By default, it should look something like `https://media-embedder-bot.<USERNAME>.workers.dev/registerWebhook`
 1. If it says Ok, your bot is ready!
+
+</details>
 
 ## Credits
 
