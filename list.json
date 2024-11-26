@@ -2,7 +2,7 @@
   {
     "name": "Twitter",
     "target": "fxtwitter.com",
-    "source": "^(www.)?((x\\.com)|(twitter\\.com))"
+    "source": "^(www\\.)?((x\\.com)|(twitter\\.com))"
   },
   {
     "name": "TikTok",
@@ -12,21 +12,21 @@
   {
     "name": "Reddit",
     "target": "vxreddit.com",
-    "source": "^(www.)?reddit\\.com"
+    "source": "^(www\\.)?reddit\\.com"
   },
   {
     "name": "Bluesky",
     "target": "fxbsky.app",
-    "source": "^(www.)?bsky\\.app"
+    "source": "^(www\\.)?bsky\\.app"
   },
   {
     "name": "Instagram",
     "target": "ddinstagram.com",
-    "source": "^(www.)?instagram\\.com"
+    "source": "^(www\\.)?instagram\\.com"
   },
   {
     "name": "YouTube",
     "target": "koutu.be",
-    "source": "^(www.)?((youtube\\.com)|(youtu\\.be))"
+    "source": "^(www\\.)?((youtube\\.com)|(youtu\\.be))"
   }
 ]
