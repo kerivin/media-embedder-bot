@@ -6,7 +6,7 @@ The bot replaces regular links with ones that display embed media, so you can wa
 
 ## Supported embeds
 
-- [TikTok](https://github.com/dylanpdx/vxtiktok)
+- [TikTok](https://tfxktok.com/)
 - [Reddit](https://github.com/dylanpdx/vxReddit)
 - [X/Twitter](https://fxtwitter.com/)
 - [Bluesky](https://fxtwitter.com/)
