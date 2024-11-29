@@ -21,7 +21,7 @@
   },
   {
     "name": "Bluesky",
-    "target": "fxbsky.app",
+    "target": "bskyy.app",
     "source": "^(www\\.)?bsky\\.app"
   },
   {
