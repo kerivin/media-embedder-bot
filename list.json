@@ -16,7 +16,7 @@
   },
   {
     "name": "Reddit",
-    "target": "vxreddit.com",
+    "target": "rxddit.com",
     "source": "^(www\\.)?reddit\\.com"
   },
   {
