@@ -15,6 +15,8 @@ The bot replaces regular links with ones that display embed media, so you can wa
 
 I'm not the author of the embed services themselves, the bot just creates a link to them. If you run into a problem with embeds, you can report it to the original author.
 
+If some stop working, or you know better ones, feel free to open an issue, so I replace them!
+
 ## Usage
 
 `@bot_username <post link>`
