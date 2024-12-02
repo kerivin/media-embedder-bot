@@ -11,8 +11,8 @@
   },
   {
     "name": "TikTok",
-    "target": "tfxktok.com",
-    "source": "^(www\\.)?(\\w+\\.)?tiktok\\.com"
+    "target": "vxtiktok.com",
+    "source": "tiktok\\.com"
   },
   {
     "name": "Reddit",
