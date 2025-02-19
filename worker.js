@@ -83,7 +83,7 @@ async function onInlineQuery (inlineQuery) {
   const results = [({
     type: 'article',
     id: crypto.randomUUID(),
-    title: 'CLICK TO SEND 🡵',
+    title: '☞ CLICK TO SEND',
     //url: url,
     hide_url: true,
     //thumbnail_url: originalURL,
