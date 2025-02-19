@@ -83,11 +83,11 @@ async function onInlineQuery (inlineQuery) {
   const results = [({
     type: 'article',
     id: crypto.randomUUID(),
-    title: title,
+    title: 'CLICK TO SEND 🡵',
     //url: url,
     hide_url: true,
     //thumbnail_url: originalURL,
-    description: url,
+    description: title,
     input_message_content: {
       message_text: `[${title}](${url})`,
       parse_mode: "markdown",
