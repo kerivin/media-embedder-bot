@@ -26,7 +26,7 @@
   },
   {
     "name": "Instagram",
-    "target": "ddinstagram.com",
+    "target": "eeinstagram.com",
     "source": "^(www\\.)?instagram\\.com"
   },
   {
