@@ -8,8 +8,8 @@ The bot replaces regular links with ones that display embed media, so you can wa
 
 - [TikTok](https://tfxktok.com/)
 - [Reddit](https://github.com/MinnDevelopment/fxreddit)
-- [X/Twitter](https://github.com/dylanpdx/BetterTwitFix)
-- [Bluesky](https://bskyy.app/)
+- [X/Twitter](https://github.com/FxEmbed/FxEmbed)
+- [Bluesky](https://github.com/FxEmbed/FxEmbed)
 - [Instagram](https://github.com/Knoppiix/InstaEmbedRouter)
 - [YouTube](https://github.com/iGerman00/koutube)
 
