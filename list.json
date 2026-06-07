@@ -1,12 +1,12 @@
 [
   {
     "name": "Twitter",
-    "target": "vxtwitter.com",
+    "target": "fxtwitter.com",
     "source": "^(www\\.)?twitter\\.com"
   },
   {
     "name": "X",
-    "target": "fixvx.com",
+    "target": "fixupx.com",
     "source": "^(www\\.)?x\\.com"
   },
   {
@@ -21,7 +21,7 @@
   },
   {
     "name": "Bluesky",
-    "target": "bskyy.app",
+    "target": "fxbsky.app",
     "source": "^(www\\.)?bsky\\.app"
   },
   {
