@@ -11,7 +11,7 @@
   },
   {
     "name": "TikTok",
-    "target": "kkclip.com",
+    "target": "tfxktok.com",
     "source": "^(www\\.)?(\\w+\\.)?tiktok\\.com"
   },
   {
