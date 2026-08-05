@@ -6,7 +6,7 @@ The bot replaces regular links with ones that display embed media, so you can wa
 
 ## Supported embeds
 
-- [TikTok](https://kkclip.com/)
+- [TikTok](https://tfxktok.com/)
 - [Reddit](https://github.com/MinnDevelopment/fxreddit)
 - [X/Twitter](https://github.com/FxEmbed/FxEmbed)
 - [Bluesky](https://github.com/FxEmbed/FxEmbed)
