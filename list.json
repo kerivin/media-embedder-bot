@@ -12,7 +12,7 @@
   {
     "name": "TikTok",
     "source": "^(www\\.)?(\\w+\\.)?tiktok\\.com",
-    "targets": ["tnktok.com", "kkclip.com", "tfxktok.com", "vxtiktok.com"]
+    "targets": ["d.tnktok.com", "kkclip.com", "tnktok.com", "tfxktok.com", "vxtiktok.com"]
   },
   {
     "name": "Reddit",
