@@ -1,37 +1,37 @@
 [
   {
     "name": "Twitter",
-    "target": "fxtwitter.com",
-    "source": "^(www\\.)?twitter\\.com"
+    "source": "^(www\\.)?twitter\\.com",
+    "targets": ["fxtwitter.com", "vxtwitter.com", "fixupx.com"]
   },
   {
     "name": "X",
-    "target": "fixupx.com",
-    "source": "^(www\\.)?x\\.com"
+    "source": "^(www\\.)?x\\.com",
+    "targets": ["fixupx.com", "fxtwitter.com", "vxtwitter.com"]
   },
   {
     "name": "TikTok",
-    "target": "tnktok.com",
-    "source": "^(www\\.)?(\\w+\\.)?tiktok\\.com"
+    "source": "^(www\\.)?(\\w+\\.)?tiktok\\.com",
+    "targets": ["tnktok.com", "kkclip.com", "tfxktok.com", "vxtiktok.com"]
   },
   {
     "name": "Reddit",
-    "target": "rxddit.com",
-    "source": "^(www\\.)?reddit\\.com"
+    "source": "^(www\\.)?reddit\\.com",
+    "targets": ["rxddit.com", "vxreddit.com"]
   },
   {
     "name": "Bluesky",
-    "target": "fxbsky.app",
-    "source": "^(www\\.)?bsky\\.app"
+    "source": "^(www\\.)?bsky\\.app",
+    "targets": ["fxbsky.app", "vxbsky.app"]
   },
   {
     "name": "Instagram",
-    "target": "zzinstagram.com",
-    "source": "^(www\\.)?instagram\\.com"
+    "source": "^(www\\.)?instagram\\.com",
+    "targets": ["zzinstagram.com", "ddinstagram.com"]
   },
   {
     "name": "YouTube",
-    "target": "koutu.be",
-    "source": "^(www\\.)?((youtube\\.com)|(youtu\\.be))"
+    "source": "^(www\\.)?((youtube\\.com)|(youtu\\.be))",
+    "targets": ["koutu.be"]
   }
 ]

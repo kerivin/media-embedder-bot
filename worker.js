@@ -113,24 +113,187 @@ async function getFixedURL (originalURL) {
   const json = await response.json();
   console.log("JSON: ", JSON.stringify(json));
   var title = "Embed Link"
+  var matched = null
   json.every(function(entry) {
     const regex = new RegExp(entry.source, "gi")
     if (!regex.test(url.hostname)) {
       return true
     }
     console.log("Regex detected: ", entry.source)
-    url.hostname = url.hostname.replace(regex, entry.target)
-    //url.hostname = entry.target
-    console.log("New hostname: ", url.hostname)
-    title = entry.name
+    matched = entry
     return false
   })
+
+  if (matched) {
+    const candidates = matched.targets || (matched.target ? [matched.target] : [])
+    const target = await selectTarget(url, matched.source, candidates)
+    if (target) {
+      console.log("Selected target: ", target)
+      url = rewriteUrl(url, matched.source, target)
+      title = matched.name
+    } else {
+      console.log("No working embed service, returning original URL")
+    }
+  }
 
   console.log("Fixed URL: ", url)
   return {
     url: url.toString(),
     title: title
   }
+}
+
+/**
+ * Replace the matched hostname with the target embed service host.
+ */
+function rewriteUrl (url, sourceRegex, targetHost) {
+  const rewritten = new URL(url.toString())
+  rewritten.hostname = rewritten.hostname.replace(new RegExp(sourceRegex, 'gi'), targetHost)
+  return rewritten
+}
+
+async function selectTarget (url, sourceRegex, candidates) {
+  var imageOnly = null
+  for (const candidate of candidates) {
+    const probeUrl = rewriteUrl(url, sourceRegex, candidate)
+    console.log("Probing: ", probeUrl.toString())
+    const tags = await probeEmbed(probeUrl.toString())
+    if (tags.video) {
+      console.log("Video embed found: ", candidate)
+      return candidate
+    }
+    if (tags.image && !imageOnly) {
+      console.log("Image-only embed found (fallback): ", candidate)
+      imageOnly = candidate
+    }
+  }
+  return imageOnly
+}
+
+const EMBED_TIMEOUT_MS = 3000
+const MAX_BODY_CHARS = 65536
+const CRAWLER_UA = 'TelegramBot-LinkPreview (like TwitterBot)'
+
+async function fetchWithTimeout (url, options = {}) {
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), EMBED_TIMEOUT_MS)
+  try {
+    return await fetch(url, { redirect: 'follow', signal: controller.signal, ...options })
+  } finally {
+    clearTimeout(timeout)
+  }
+}
+
+/**
+ * Fetch the embed page and check whether it actually contains a media preview.
+ * Returns { video, image } booleans, where video is only true if the og:video
+ * URL resolves to a direct, playable video file (not an HTML page).
+ */
+async function probeEmbed (probeUrl) {
+  try {
+    const response = await fetchWithTimeout(probeUrl, {
+      method: 'GET',
+      headers: { 'User-Agent': CRAWLER_UA }
+    })
+    if (!response.ok) {
+      console.log("Probe HTTP status: ", response.status)
+      return { video: false, image: false }
+    }
+    if (!response.body) {
+      return { video: false, image: false }
+    }
+    const reader = response.body.getReader()
+    const decoder = new TextDecoder()
+    var text = ''
+    while (text.length < MAX_BODY_CHARS) {
+      const { done, value } = await reader.read()
+      if (done) break
+      text += decoder.decode(value, { stream: true })
+    }
+    text += decoder.decode()
+    reader.cancel()
+    const tags = extractMetaTags(text)
+    const videoUrl = tags['og:video'] || tags['og:video:url'] || tags['og:video:secure_url']
+    const videoType = tags['og:video:type']
+    const image = !!(tags['og:image'] || tags['og:image:url'] || tags['og:image:secure_url'])
+    if (!videoUrl) {
+      return { video: false, image }
+    }
+    if (videoType && !videoType.toLowerCase().startsWith('video/')) {
+      console.log("og:video:type is not a video: ", videoType)
+      return { video: false, image }
+    }
+    const video = await isPlayableVideo(videoUrl)
+    console.log("Playable video check: ", videoUrl, video)
+    return { video, image }
+  } catch (e) {
+    console.log("Probe failed: ", e.message || e)
+    return { video: false, image: false }
+  }
+}
+
+/**
+ * True if the given URL resolves (following redirects) to a direct video file.
+ */
+async function isPlayableVideo (videoUrl) {
+  const contentType = await probeContentType(videoUrl)
+  return !!contentType.toLowerCase().startsWith('video/')
+}
+
+/**
+ * Return the Content-Type of a URL. Uses HEAD, falling back to GET for servers
+ * that don't support HEAD. Never downloads the body.
+ */
+async function probeContentType (url) {
+  const contentTypeOf = (response) => response.headers.get('content-type') || ''
+  try {
+    const response = await fetchWithTimeout(url, {
+      method: 'HEAD',
+      headers: { 'User-Agent': CRAWLER_UA }
+    })
+    if (response.status === 405 || response.status === 501) {
+      throw new Error(`HEAD not supported: ${response.status}`)
+    }
+    return contentTypeOf(response)
+  } catch (e) {
+    console.log("HEAD probe failed, retrying with GET: ", e.message || e)
+    try {
+      const response = await fetchWithTimeout(url, {
+        method: 'GET',
+        headers: { 'User-Agent': CRAWLER_UA }
+      })
+      if (response.body) {
+        response.body.cancel()
+      }
+      return contentTypeOf(response)
+    } catch (e2) {
+      console.log("GET probe failed: ", e2.message || e2)
+      return ''
+    }
+  }
+}
+
+/**
+ * Extract Open Graph meta tags from an HTML string.
+ * Returns an object keyed by the lowercased property/name with its content value.
+ */
+function extractMetaTags (html) {
+  const tags = {}
+  const metaRegex = /<meta\b[^>]*>/gi
+  var m
+  while ((m = metaRegex.exec(html)) !== null) {
+    const tag = m[0]
+    const getAttr = (name) => {
+      const match = tag.match(new RegExp(`${name}\\s*=\\s*["']([^"']*)["']`, 'i'))
+      return match ? match[1] : null
+    }
+    const property = getAttr('property') || getAttr('name')
+    const content = getAttr('content')
+    if (property && content) {
+      tags[property.toLowerCase()] = content
+    }
+  }
+  return tags
 }
 
 /**

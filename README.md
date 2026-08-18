@@ -6,12 +6,12 @@ The bot replaces regular links with ones that display embed media, so you can wa
 
 ## Supported embeds
 
-- [TikTok](https://tnktok.com/)
-- [Reddit](https://github.com/MinnDevelopment/fxreddit)
-- [X/Twitter](https://github.com/FxEmbed/FxEmbed)
-- [Bluesky](https://github.com/FxEmbed/FxEmbed)
-- [Instagram](https://github.com/Knoppiix/InstaEmbedRouter)
-- [YouTube](https://github.com/iGerman00/koutube)
+- TikTok
+- Reddit
+- X/Twitter
+- Bluesky
+- Instagram
+- YouTube
 
 I'm not the author of the embed services themselves, the bot just creates a link to them. If you run into a problem with embeds, you can report it to the original author.
 
