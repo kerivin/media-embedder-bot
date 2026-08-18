@@ -186,8 +186,9 @@ async function fetchWithTimeout (url, options = {}) {
 
 /**
  * Fetch the embed page and check whether it actually contains a media preview.
- * Returns { video, image } booleans, where video is only true if the og:video
- * URL resolves to a direct, playable video file (not an HTML page).
+ * Returns { video, image } booleans. A candidate counts as a video if either:
+ * - the embed URL itself resolves to a direct video file, or
+ * - the page declares an og:video URL that resolves to a playable video file.
  */
 async function probeEmbed (probeUrl) {
   try {
@@ -198,6 +199,14 @@ async function probeEmbed (probeUrl) {
     if (!response.ok) {
       console.log("Probe HTTP status: ", response.status)
       return { video: false, image: false }
+    }
+    const contentType = response.headers.get('content-type') || ''
+    if (contentType.toLowerCase().startsWith('video/')) {
+      if (response.body) {
+        response.body.cancel()
+      }
+      console.log("Embed URL is a direct video file: ", probeUrl)
+      return { video: true, image: false }
     }
     if (!response.body) {
       return { video: false, image: false }
