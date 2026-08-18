@@ -153,10 +153,22 @@ function rewriteUrl (url, sourceRegex, targetHost) {
 }
 
 async function selectTarget (url, sourceRegex, candidates) {
+  // Tier 1 — deterministic: a candidate whose rewritten URL serves a direct video
+  // file is guaranteed to produce a video preview in Telegram. Never a false negative.
+  for (const candidate of candidates) {
+    const probeUrl = rewriteUrl(url, sourceRegex, candidate)
+    console.log("Direct video file probe: ", probeUrl.toString())
+    if (await probeDirectVideoFile(probeUrl.toString())) {
+      console.log("Direct video file found: ", candidate)
+      return candidate
+    }
+  }
+  // Tier 2 — best effort: HTML embed pages (og:video pointing to a playable file).
+  // Only reached when no deterministic (direct file) candidate exists.
   var imageOnly = null
   for (const candidate of candidates) {
     const probeUrl = rewriteUrl(url, sourceRegex, candidate)
-    console.log("Probing: ", probeUrl.toString())
+    console.log("Probing embed page: ", probeUrl.toString())
     const tags = await probeEmbed(probeUrl.toString())
     if (tags.video) {
       console.log("Video embed found: ", candidate)
@@ -181,6 +193,37 @@ async function fetchWithTimeout (url, options = {}) {
     return await fetch(url, { redirect: 'follow', signal: controller.signal, ...options })
   } finally {
     clearTimeout(timeout)
+  }
+}
+
+/**
+ * Deterministic check: does the URL resolve (following redirects) to a direct
+ * video file? Sends a 1-byte Range GET so the media/CDN layer answers directly,
+ * bypassing HTML pages and the bot-sniffing protection on them. A "yes" means
+ * Telegram will play the URL as an inline video, unconditionally.
+ */
+async function probeDirectVideoFile (url) {
+  try {
+    const response = await fetchWithTimeout(url, {
+      method: 'GET',
+      headers: {
+        'User-Agent': CRAWLER_UA,
+        'Range': 'bytes=0-0'
+      }
+    })
+    if (response.body) {
+      response.body.cancel()
+    }
+    if (!response.ok) {
+      console.log("Direct video file probe status: ", response.status)
+      return false
+    }
+    const contentType = response.headers.get('content-type') || ''
+    console.log("Direct video file probe content-type: ", contentType)
+    return contentType.toLowerCase().startsWith('video/')
+  } catch (e) {
+    console.log("Direct video file probe failed: ", e.message || e)
+    return false
   }
 }
 
